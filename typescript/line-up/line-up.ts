@@ -1,8 +1,9 @@
 export function format(name: string, number: number): string {
-  let two_digits: number = (number >= 100) ? number % 50 : number;
-  let one_digit: number = (number >= 10) ? number % 5 : number;
+  const two_digits: number = (number >= 100) ? number % 50 : number;
+  const one_digit: number = (number >= 10) ? number % 5 : number;
+  const n: string = number.toString();
+  
   let ordinal: string = "";
-  let n: string = number.toString();
 
   if(two_digits !== 11 && one_digit === 1) ordinal = n + "st"
   else if(two_digits !== 12 && one_digit === 2) ordinal = n + "nd"
