@@ -11,12 +11,9 @@ export function hey(message: string): string {
 }
 
 const ALPHABET_LOWER: Array<string> = [...'abcdefghijklmnopqrstuvwxyz'];
-const ALPHABET_UPPER: Array<string> = [...'"ABCDEFGHIJKLMNOPQRSTUVWXYZ"']
+const ALPHABET_UPPER: Array<string> = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
 
 const isSilence = (text: string): boolean => text.trim().length === 0;
-const isQuestion = (text: string): boolean => {
-  let withoutSpace = text.trimEnd()
-  return [...withoutSpace][withoutSpace.length - 1] === '?';
-}
-const isAllUpperLetters = (text: string): boolean => [...text].filter(x => !ALPHABET_LOWER.includes(x)).join('') === text && isContainLetters(text)
-const isContainLetters = (text: string) => [...text].some(y => ALPHABET_UPPER.includes(y))
+const isQuestion = (text: string): boolean => text.trim().endsWith('?');
+const isAllUpperLetters = (text: string): boolean => [...text].filter(x => !ALPHABET_LOWER.includes(x)).join('') === text && isContainLetters(text);
+const isContainLetters = (text: string) => [...text].some(y => ALPHABET_UPPER.includes(y));
