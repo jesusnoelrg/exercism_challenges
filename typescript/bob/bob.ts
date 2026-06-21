@@ -10,10 +10,7 @@ export function hey(message: string): string {
   return "Whatever.";
 }
 
-const ALPHABET_LOWER: Array<string> = [...'abcdefghijklmnopqrstuvwxyz'];
-const ALPHABET_UPPER: Array<string> = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
-
 const isSilence = (text: string): boolean => text.trim().length === 0;
 const isQuestion = (text: string): boolean => text.trim().endsWith('?');
-const isAllUpperLetters = (text: string): boolean => [...text].filter(x => !ALPHABET_LOWER.includes(x)).join('') === text && isContainLetters(text);
-const isContainLetters = (text: string) => [...text].some(y => ALPHABET_UPPER.includes(y));
+const isAllUpperLetters = (text: string): boolean => text.toUpperCase() === text && isContainLetters(text);
+const isContainLetters = (text: string) => /[A-Z]/.test(text);
