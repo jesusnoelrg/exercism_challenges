@@ -1,5 +1,5 @@
 export class Matrix {
-  public grid: string
+  private grid: string
 
   constructor(grid: string) {
     this.grid = grid
