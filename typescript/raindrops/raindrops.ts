@@ -5,7 +5,5 @@ export function convert(drops: number): string {
   if (drops % 5 === 0) sound += 'Plang';
   if (drops % 7 === 0) sound += 'Plong';
 
-  if (sound.trim() === '') sound += drops.toString();
-
-  return sound;
+  return sound || drops.toString();
 }
