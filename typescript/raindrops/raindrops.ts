@@ -1,0 +1,11 @@
+export function convert(drops: number): string {
+  let sound: string = '';
+
+  if (drops % 3 === 0) sound += 'Pling';
+  if (drops % 5 === 0) sound += 'Plang';
+  if (drops % 7 === 0) sound += 'Plong';
+
+  if (sound.trim() === '') sound += drops.toString();
+
+  return sound;
+}
